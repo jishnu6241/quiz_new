@@ -5,8 +5,10 @@ import 'package:quiz_new/view/home_page/home_page.dart';
 
 class BioResult extends StatefulWidget {
   final int rightAnswer;
+  final int skipCount;
 
-  const BioResult({super.key, required this.rightAnswer});
+  const BioResult(
+      {super.key, required this.rightAnswer, required this.skipCount});
 
   @override
   State<BioResult> createState() => _BioResultState();
@@ -56,7 +58,7 @@ class _BioResultState extends State<BioResult> {
                       'Wrong:  ${BiologyDb.biologydbquestions.length - widget.rightAnswer}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
-                  Text('skipped:  0',
+                  Text('skipped:  ${widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20))
                 ],

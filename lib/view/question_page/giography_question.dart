@@ -16,6 +16,7 @@ class _GeoQnsState extends State<GeoQns> {
   int questinindex = 0;
   int? selectedAnswerIndex;
   int righAnswer = 0;
+  int skipCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +81,9 @@ class _GeoQnsState extends State<GeoQns> {
                     return InkWell(
                       onTap: () {
                         setState(() {
+                          if (selectedAnswerIndex == null) {
+                            skipCount++;
+                          }
                           selectedAnswerIndex = index;
                           if (selectedAnswerIndex != null &&
                               selectedAnswerIndex ==
@@ -141,6 +145,7 @@ class _GeoQnsState extends State<GeoQns> {
                           MaterialPageRoute(
                             builder: (context) => GeoResult(
                               rightAnswer: righAnswer,
+                              skipCount: skipCount,
                             ),
                           ));
                     }

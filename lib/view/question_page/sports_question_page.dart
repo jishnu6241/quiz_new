@@ -16,6 +16,7 @@ class _SportsQnsState extends State<SportsQns> {
   int questinindex = 0;
   int? selectedAnswerIndex;
   int righAnswer = 0;
+  int skipCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +128,10 @@ class _SportsQnsState extends State<SportsQns> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (selectedAnswerIndex == null) {
+                      skipCount++;
+                    }
+
                     selectedAnswerIndex = null;
                     persantage += 0.1;
                     if (questinindex < SportsDb.sportsdbquestions.length - 1) {
@@ -139,6 +144,7 @@ class _SportsQnsState extends State<SportsQns> {
                           MaterialPageRoute(
                             builder: (context) => SportsResult(
                               rightAnswer: righAnswer,
+                              skipCount: skipCount,
                             ),
                           ));
                     }

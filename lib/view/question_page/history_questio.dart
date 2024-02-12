@@ -16,6 +16,7 @@ class _HisQnsState extends State<HisQns> {
   int questinindex = 0;
   int? selectedAnswerIndex;
   int righAnswer = 0;
+  int skipCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +128,9 @@ class _HisQnsState extends State<HisQns> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (selectedAnswerIndex == null) {
+                      skipCount++;
+                    }
                     selectedAnswerIndex = null;
                     persantage += 0.1;
                     if (questinindex <
@@ -140,6 +144,7 @@ class _HisQnsState extends State<HisQns> {
                           MaterialPageRoute(
                             builder: (context) => HisResult(
                               rightAnswer: righAnswer,
+                              skipCount: skipCount,
                             ),
                           ));
                     }

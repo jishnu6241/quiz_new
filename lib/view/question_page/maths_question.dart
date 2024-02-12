@@ -16,6 +16,7 @@ class _MathsQnsState extends State<MathsQns> {
   int questinindex = 0;
   int? selectedAnswerIndex;
   int righAnswer = 0;
+  int skipcount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +128,9 @@ class _MathsQnsState extends State<MathsQns> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (selectedAnswerIndex == null) {
+                      skipcount++;
+                    }
                     selectedAnswerIndex = null;
                     persantage += 0.1;
                     if (questinindex < MathsDb.mathsdbquestions.length - 1) {
@@ -139,6 +143,7 @@ class _MathsQnsState extends State<MathsQns> {
                           MaterialPageRoute(
                             builder: (context) => MathsResult(
                               rightAnswer: righAnswer,
+                              skipCount: skipcount,
                             ),
                           ));
                     }

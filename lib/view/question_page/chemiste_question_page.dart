@@ -16,6 +16,7 @@ class _ChemQnsState extends State<ChemQns> {
   int questinindex = 0;
   int? selectedAnswerIndex;
   int righAnswer = 0;
+  int skipCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +81,9 @@ class _ChemQnsState extends State<ChemQns> {
                     return InkWell(
                       onTap: () {
                         setState(() {
+                          if (selectedAnswerIndex == null) {
+                            skipCount++;
+                          }
                           selectedAnswerIndex = index;
                           if (selectedAnswerIndex != null &&
                               selectedAnswerIndex ==
@@ -141,6 +145,7 @@ class _ChemQnsState extends State<ChemQns> {
                           MaterialPageRoute(
                             builder: (context) => CheResult(
                               rightAnswer: righAnswer,
+                              skipCount: skipCount,
                             ),
                           ));
                     }

@@ -6,7 +6,10 @@ import 'package:quiz_new/view/home_page/home_page.dart';
 class MathsResult extends StatefulWidget {
   final int rightAnswer;
 
-  const MathsResult({super.key, required this.rightAnswer});
+  final int skipCount;
+
+  const MathsResult(
+      {super.key, required this.rightAnswer, required this.skipCount});
 
   @override
   State<MathsResult> createState() => _MathsResultState();
@@ -55,7 +58,7 @@ class _MathsResultState extends State<MathsResult> {
                       'Wrong:  ${MathsDb.mathsdbquestions.length - widget.rightAnswer}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
-                  Text('skipped:  0',
+                  Text('skipped:  ${widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20))
                 ],
