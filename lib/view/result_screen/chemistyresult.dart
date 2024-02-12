@@ -55,7 +55,7 @@ class _CheResultState extends State<CheResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${ChemistryDb.chemistrydbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${ChemistryDb.chemistrydbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',

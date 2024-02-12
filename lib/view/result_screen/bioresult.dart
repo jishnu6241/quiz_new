@@ -55,7 +55,7 @@ class _BioResultState extends State<BioResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${BiologyDb.biologydbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${BiologyDb.biologydbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',

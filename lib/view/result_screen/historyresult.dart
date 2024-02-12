@@ -54,7 +54,7 @@ class _HisResultState extends State<HisResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${HistoryDb.historydbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${HistoryDb.historydbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',

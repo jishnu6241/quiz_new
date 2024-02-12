@@ -55,7 +55,7 @@ class _MathsResultState extends State<MathsResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${MathsDb.mathsdbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${MathsDb.mathsdbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',

@@ -55,7 +55,7 @@ class _GeoResultState extends State<GeoResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${GeographyDb.geographydbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${GeographyDb.geographydbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',

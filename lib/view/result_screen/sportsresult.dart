@@ -54,7 +54,7 @@ class _SportsResultState extends State<SportsResult> {
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text(
-                      'Wrong:  ${SportsDb.sportsdbquestions.length - widget.rightAnswer}',
+                      'Wrong:  ${SportsDb.sportsdbquestions.length - widget.rightAnswer - widget.skipCount}',
                       style: TextStyle(
                           color: ColorConstant.backgroundwhite, fontSize: 20)),
                   Text('skipped:  ${widget.skipCount}',
