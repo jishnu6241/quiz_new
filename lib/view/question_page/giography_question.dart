@@ -132,6 +132,10 @@ class _GeoQnsState extends State<GeoQns> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (selectedAnswerIndex == null) {
+                      skipCount++;
+                    }
+
                     selectedAnswerIndex = null;
                     persantage += 0.1;
                     if (questinindex <
